@@ -1,0 +1,25 @@
+<div class="margin-global ion-text-center">
+
+  <ion-card class="glass">
+    <ion-text color="dark" class="title-card">
+      <p>HEADER</p>
+    </ion-text>
+    <ion-card-content>
+      <br>
+      <img src="assets/picture.jpg" class="picture">
+      <ion-text color="dark">
+        <p class="name">
+          Jocimar Lopes
+        </p>
+      </ion-text>
+      <br>
+      
+      <div class="content-buttons" size="2">
+        <ion-fab-button *ngFor="let botao of botoes" (click)="goToPage(botao.link)" size="small" color="dark">
+          <ion-icon color="light" name="{{botao.icon}}"></ion-icon>
+        </ion-fab-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</div>

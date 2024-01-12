@@ -24,3 +24,39 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: Alata;
+  src: url('assets/Alata/Alata-Regular.ttf');
+}
+
+* {
+  font-family: Alata;
+}
+.button-dark-mode {
+  position: fixed;
+  right: 5px;
+  top: 5px;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
+}
+
+.margin-global {
+  margin-top: 60px;
+}
+
+.title-card {
+  position: absolute;
+  left: 21px;
+  font-weight: bold;
+  opacity: .1;
+  p {
+    font-size: 21px;
+  }
+}
