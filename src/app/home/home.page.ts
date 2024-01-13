@@ -10,16 +10,23 @@ export class HomePage implements OnInit {
 
   isDark: boolean = false
   screen: any = window.innerWidth
+  ano: string = '2024'
 
   constructor() { }
 
   ngOnInit() {
+    this.addAnoCopyright()
     this.changeScreen()
     this.addBackground()
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');    
     this.isDark = prefersDark.matches
     this.initializeDarkTheme(prefersDark.matches);
     prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkTheme(mediaQuery.matches));
+  }
+
+  addAnoCopyright() {
+    const date = new Date()
+    this.ano = date.getFullYear().toString()
   }
 
   changeScreen() {
