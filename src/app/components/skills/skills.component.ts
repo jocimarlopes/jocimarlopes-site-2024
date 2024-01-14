@@ -55,7 +55,7 @@ export class SkillsComponent  implements OnInit {
       {title: 'Google Cloud', value: 0.95},
       {title: 'Docker', value: 0.85},
       {title: 'Heroku', value: 0.88},
-      {title: 'Trello', value: 0.90},
+      {title: 'API Rest | GraphQL', value: 0.89},
       {title: 'Jira', value: 0.80},
     ]
   }
