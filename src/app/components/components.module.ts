@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { SkillsComponent } from './skills/skills.component';
 import { EducationComponent } from './education/education.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { InterestsComponent } from './interests/interests.component';
 
 
 
@@ -12,7 +14,9 @@ import { EducationComponent } from './education/education.component';
     HeaderComponent,
     AboutComponent,
     SkillsComponent,
-    EducationComponent
+    EducationComponent,
+    InterestsComponent,
+    ExperienceComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +25,9 @@ import { EducationComponent } from './education/education.component';
     HeaderComponent,
     AboutComponent,
     SkillsComponent,
-    EducationComponent
+    EducationComponent,
+    InterestsComponent,
+    ExperienceComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
