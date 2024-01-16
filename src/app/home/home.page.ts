@@ -49,7 +49,7 @@ export class HomePage implements OnInit {
       repeat: -1
     });
 
-    // Beach Ball
+    // Bola
     gsap.to("#ball-group", { x: -1700, repeatDelay: 10, duration: 30 });
     gsap.to("#ball", 30, {
       rotation: "-4000deg",
@@ -58,7 +58,7 @@ export class HomePage implements OnInit {
       repeatDelay: 10,
     });
 
-    // Sun
+    // Sol
     gsap.set("#sun-group", { x: 1150 });
     gsap.to("#sun-band-1, #sun-band-2", 5, {
       scale: 1.3,
@@ -67,10 +67,7 @@ export class HomePage implements OnInit {
       yoyo: true
     });
 
-    // Fence
-    // gsap.to("#fence-1, #fence-2", 4, { x: -1500 });
-
-    // Waves
+    // Ondas
     gsap.to("#wave-group", 20, { x: -2000 });
     gsap.to("#wave-group", 5, {
       scaleY: 0.5,
@@ -79,20 +76,20 @@ export class HomePage implements OnInit {
       transformOrigin: "top center"
     });
 
-    // Rocks
+    // Pedras
     gsap.to("#rocks-1, #rocks-2", 60, { x: -1500 });
 
-    // Clouds
+    // Nuvens
     gsap.to("#clouds-1, #clouds-2", 100, { x: -2000 });
 
-    // Islands
+    // Ilhas
     gsap.to("#islands-1, #islands-2", 200, { x: -1500 });
 
-    // Surfboards
+    // Pranchas de Surf
     gsap.to("#surfboard-1", 20, { x: -2000, delay: 20, repeatDelay: 30 });
     gsap.to("#surfboard-2", 20, { x: -2000, repeatDelay: 30 });
 
-    // Bird
+    // Pássaro
     gsap.to("#bird", 12, { x: -2000 });
     gsap.to("#bird", 3, {
       y: 200,

@@ -6,6 +6,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { InterestsComponent } from './interests/interests.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 
 
@@ -16,7 +17,8 @@ import { InterestsComponent } from './interests/interests.component';
     SkillsComponent,
     EducationComponent,
     InterestsComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    PortfolioComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { InterestsComponent } from './interests/interests.component';
     SkillsComponent,
     EducationComponent,
     InterestsComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    PortfolioComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
