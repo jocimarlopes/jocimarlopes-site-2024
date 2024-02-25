@@ -86,7 +86,7 @@ export class HomePage implements OnInit {
     gsap.to("#islands-1, #islands-2", 200, { x: -1500 });
 
     // Pranchas de Surf
-    gsap.to("#surfboard-1", 20, { x: -2000, delay: 20, repeatDelay: 30 });
+    //gsap.to("#surfboard-1", 20, { x: -2000, delay: 20, repeatDelay: 30 });
     gsap.to("#surfboard-2", 20, { x: -2000, repeatDelay: 30 });
 
     // Pássaro

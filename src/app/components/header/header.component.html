@@ -2,21 +2,21 @@
 
   <ion-card class="glass">
     <ion-text color="dark" class="title-card">
-      <p>OLÁ MUNDO</p>
+      <p class="label">OLÁ MUNDO</p>
     </ion-text>
     <ion-card-content>
       <br>
-      <img src="assets/picture.jpg" class="picture">
+      <div class="picture-content">
+        <img id="image" src="assets/picture.jpg" class="picture">
+      </div>
       <ion-text color="dark">
-        <p class="name">
-          Jocimar Lopes
-        </p>
-        <p>Desenvolvedor Mobile Full-Stack</p>
+        <p class="name">Jocimar Lopes</p>
+        <p class="subtitle">Desenvolvedor Mobile Full-Stack</p>
       </ion-text>
       <br>
       
       <div class="content-buttons" size="2">
-        <ion-fab-button *ngFor="let botao of botoes" (click)="goToPage(botao.link)" size="small" color="dark">
+        <ion-fab-button class="buttons" *ngFor="let botao of botoes" (click)="goToPage(botao.link)" size="small" color="dark">
           <ion-icon color="light" name="{{botao.icon}}"></ion-icon>
         </ion-fab-button>
       </div>
