@@ -33,8 +33,8 @@ export class AboutComponent  implements OnInit {
       'logo-javascript',
       'logo-python',
       'logo-tux',
-      'logo-google',
-      'logo-amazon'
+      'logo-ionic',
+      'logo-angular'
     ]
   }
 
@@ -43,8 +43,8 @@ export class AboutComponent  implements OnInit {
       await gsap.from(this.q(".buttons"),
         {
           delay: 2,
-          y: '-15vh',
-          opacity: 1,
+          y: '-18vh',
+          opacity: 0,
           stagger: 0.4,
           duration: 0.8,
           ease: 'bounce.out',

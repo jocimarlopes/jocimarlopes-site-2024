@@ -1,6 +1,6 @@
 <div class="margin-global ion-text-center">
 
-  <ion-card class="glass ion-padding-bottom">
+  <ion-card id="skills-content" class="glass ion-padding-bottom">
     <ion-text color="dark" class="title-card">
       <p>SKILLS</p>
     </ion-text>
@@ -15,7 +15,9 @@
           </ion-text>
           <ion-item *ngFor="let skill of languages" lines="none" color="transparent">
             <p class="title-skill">{{skill.title}}</p>
-            <ion-progress-bar color="dark" [value]="skill.value"></ion-progress-bar>
+            <div class="progress-bar-content">
+              <ion-progress-bar class="progress-bar-left" color="dark" [value]="skill.value"></ion-progress-bar>
+            </div>
           </ion-item>
         </ion-col>
         <ion-col size="{{screen > 800 ? 6 : 12}}">
@@ -26,7 +28,9 @@
           </ion-text>
           <ion-item *ngFor="let skill of softwares" lines="none" color="transparent">
             <p class="title-skill">{{skill.title}}</p>
-            <ion-progress-bar color="dark" [value]="skill.value"></ion-progress-bar>
+            <div class="progress-bar-content">
+              <ion-progress-bar class="progress-bar-right" color="dark" [value]="skill.value"></ion-progress-bar>
+            </div>
           </ion-item>
         </ion-col>
       </ion-row>

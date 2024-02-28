@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import gsap, { Power1 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 @Component({
   selector: 'skills',
@@ -10,17 +12,27 @@ export class SkillsComponent  implements OnInit {
   screen: number = window.innerWidth
   languages: any = []
   softwares: any = []
+  q: any
 
-  constructor() { }
+  constructor(
+    private el: ElementRef
+  ) {
+    this.q = gsap.utils.selector(el);
+  }
 
   ngOnInit() {
-    this.changeScreen()
     this.addLanguages()
+    this.changeScreen()
     this.addSoftwares()
+    this.initAnimations()
   }
 
   changeScreen() {
     addEventListener("resize", () => this.screen = window.innerWidth)
+  }
+
+  initAnimations() {
+    this.animateProgressBar()
   }
 
   addLanguages() {
@@ -58,6 +70,31 @@ export class SkillsComponent  implements OnInit {
       {title: 'API Rest | GraphQL', value: 0.89},
       {title: 'Jira', value: 0.80},
     ]
+  }
+
+  animateProgressBar() {
+    setTimeout(async () => {
+      gsap.from(this.q(".progress-bar-left"),
+        {
+          delay: 4,
+          width: 0,
+          duration: 2,
+          stagger: 0.3,
+          repeat: 0,
+          ease: 'bounce',
+        }
+      )
+      gsap.from(this.q(".progress-bar-right"),
+        {
+          delay: 4,
+          width: 0,
+          duration: 2,
+          stagger: 0.3,
+          repeat: 0,
+          ease: 'bounce',
+        }
+      )
+    }, 100);
   }
 
 }
