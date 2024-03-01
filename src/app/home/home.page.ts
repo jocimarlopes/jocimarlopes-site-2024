@@ -140,12 +140,13 @@ export class HomePage implements OnInit {
   }
 
   async animateDarkModeButton() {
+    if (!this.showTextDarkMode) await this.animateTextButtonDarkMode()
     gsap.to('.button-dark-mode', {
-      rotationZ: '360deg',
+      rotateX: '360deg',
+      rotateY: '360deg',
       ease: Quad.easeOut,
       repeat: 0
     })
-    if (!this.showTextDarkMode) await this.animateTextButtonDarkMode()
     gsap.to('.button-dark-mode', {
       duration: 0.4,
       repeat: 0,
