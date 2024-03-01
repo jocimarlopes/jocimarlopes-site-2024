@@ -20,6 +20,7 @@ export class HomePage implements OnInit {
     this.addAnoCopyright()
     this.changeScreen()
     this.addBackground()
+    this.initialAnimationTextButtonDarkMode()
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     this.isDark = prefersDark.matches
     this.initializeDarkTheme(prefersDark.matches);
@@ -106,6 +107,18 @@ export class HomePage implements OnInit {
     });
 
   }
+
+  async initialAnimationTextButtonDarkMode() {
+    gsap.registerPlugin(TextPlugin)
+    await gsap.from('.dark-mode-text', {
+      duration: 3,
+      repeat: 0,
+      x: 200,
+      ease: 'elastic.out',
+    })
+
+  }
+
   async animateTextButtonDarkMode() {
     this.showTextDarkMode = true
     gsap.registerPlugin(TextPlugin)
@@ -127,7 +140,7 @@ export class HomePage implements OnInit {
   }
 
   async animateDarkModeButton() {
-    if(!this.showTextDarkMode) await this.animateTextButtonDarkMode()
+    if (!this.showTextDarkMode) await this.animateTextButtonDarkMode()
     gsap.to('.button-dark-mode', {
       duration: 0.4,
       repeat: 0,
