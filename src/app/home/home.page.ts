@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import gsap from "gsap";
+import gsap, { Quad } from "gsap";
 import TextPlugin from 'gsap/TextPlugin';
 
 @Component({
@@ -140,6 +140,11 @@ export class HomePage implements OnInit {
   }
 
   async animateDarkModeButton() {
+    gsap.to('.button-dark-mode', {
+      rotationZ: '360deg',
+      ease: Quad.easeOut,
+      repeat: 0
+    })
     if (!this.showTextDarkMode) await this.animateTextButtonDarkMode()
     gsap.to('.button-dark-mode', {
       duration: 0.4,
