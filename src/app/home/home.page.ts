@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import gsap from "gsap";
+import TextPlugin from 'gsap/TextPlugin';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ export class HomePage implements OnInit {
   isDark: boolean = false
   screen: any = window.innerWidth
   ano: string = '2024'
+  showTextDarkMode: boolean = false
 
   constructor() { }
 
@@ -18,7 +20,7 @@ export class HomePage implements OnInit {
     this.addAnoCopyright()
     this.changeScreen()
     this.addBackground()
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');    
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     this.isDark = prefersDark.matches
     this.initializeDarkTheme(prefersDark.matches);
     prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkTheme(mediaQuery.matches));
@@ -102,6 +104,62 @@ export class HomePage implements OnInit {
       transformOrigin: "bottom center",
       yoyo: true
     });
+
+  }
+  async animateTextButtonDarkMode() {
+    this.showTextDarkMode = true
+    gsap.registerPlugin(TextPlugin)
+    await gsap.to('.dark-mode-text', {
+      fontSize: '12px',
+      text: `Modo ${this.isDark ? 'Claro' : 'Escuro'}`,
+      duration: .3,
+      repeat: 0,
+      fontWeight: 'bold',
+      ease: 'none',
+      marginTop: '14px'
+    })
+    await gsap.to('.dark-mode-text', {
+      duration: 1.3,
+      repeat: 0,
+      y: '-10vh',
+      ease: 'elastic.in',
+    })
+  }
+
+  async animateDarkModeButton() {
+    if(!this.showTextDarkMode) await this.animateTextButtonDarkMode()
+    gsap.to('.button-dark-mode', {
+      duration: 0.4,
+      repeat: 0,
+      zIndex: 999,
+      marginRight: '50vw',
+      marginTop: '0vh',
+      ease: 'expo.in',
+      onComplete: () => {
+        gsap.to('.button-dark-mode', {
+          duration: 0.4,
+          position: 'absolute',
+          width: '300vw',
+          height: '300vw',
+          marginTop: '-50vh',
+          marginRight: '-100vw',
+          repeat: 0,
+          onComplete: () => {
+            gsap.to('.button-dark-mode', {
+              duration: 0.4,
+              width: '56px',
+              height: '56px',
+              repeat: 0,
+              marginTop: '-3px',
+              marginRight: '-3px',
+              clearProps: "all",
+              ease: 'expo.in'
+            })
+            this.toggleDarkTheme()
+          }
+        })
+      }
+    })
 
   }
 }

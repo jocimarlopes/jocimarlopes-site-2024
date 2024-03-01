@@ -3,6 +3,18 @@
     width: 100%;
     height: 100%;
 }
+.dark-mode-text {
+  display: flex;
+  position: fixed;
+  right: 56px;
+  p {
+    font-weight: bold;
+    font-size: .75rem;
+  }
+  ion-icon {
+    margin-top: 14px;
+  }
+}
 .content-padrao {
   margin: 0 auto;
   width: 60%;
