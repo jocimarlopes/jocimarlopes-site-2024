@@ -111,7 +111,7 @@ export class HomePage implements OnInit {
   async initialAnimationTextButtonDarkMode() {
     gsap.registerPlugin(TextPlugin)
     await gsap.from('.dark-mode-text', {
-      duration: 3,
+      duration: 2,
       repeat: 0,
       x: 200,
       ease: 'elastic.out',
@@ -123,16 +123,7 @@ export class HomePage implements OnInit {
     this.showTextDarkMode = true
     gsap.registerPlugin(TextPlugin)
     await gsap.to('.dark-mode-text', {
-      fontSize: '12px',
-      text: `Modo ${this.isDark ? 'Claro' : 'Escuro'}`,
-      duration: .3,
-      repeat: 0,
-      fontWeight: 'bold',
-      ease: 'none',
-      marginTop: '14px'
-    })
-    await gsap.to('.dark-mode-text', {
-      duration: 1.3,
+      duration: 1,
       repeat: 0,
       y: '-10vh',
       ease: 'elastic.in',
