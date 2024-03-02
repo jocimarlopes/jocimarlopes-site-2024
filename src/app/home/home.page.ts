@@ -13,6 +13,8 @@ export class HomePage implements OnInit {
   screen: any = window.innerWidth
   ano: string = '2024'
   showTextDarkMode: boolean = false
+  svgParamsDesktop: string = '100 100 1400.9 643.4'
+  svgParamsMobile: string = '0 0 100vw 100vh'
 
   constructor() { }
 
