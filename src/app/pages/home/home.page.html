@@ -1,23 +1,29 @@
 <ion-content class="content-home" [fullscreen]="true">
 
   <div class="content ion-text-center">
-    <ion-text color="dark" class="dark-mode-text">
-      <p class="text-dark-mode">
-        Altere para o modo {{isDark ? 'Claro' : 'Noturno'}}
-      </p>
-      <ion-icon name="arrow-forward"></ion-icon>
-    </ion-text>
-    <ion-fab-button class="button-dark-mode" (click)="animateDarkModeButton()" shape="round" color="dark">
-      <ion-icon size="small" name="{{!isDark ? 'moon' : 'sunny'}}"></ion-icon>
-    </ion-fab-button>
+    <div class="buttons-container">
+      <ion-button size="small" color="dark" (click)="downloadCV()" shape="round">
+        <ion-icon name="print-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="animateDarkModeButton()" shape="round" size="small" color="dark">
+        <ion-icon size="small" name="{{!isDark ? 'moon' : 'sunny'}}-outline"></ion-icon>
+      </ion-button>
+      <ion-button size="small" color="dark" (click)="changeLanguageAnimations()" shape="round">{{selectedLang === 'pt' ? '🇺🇸 en' : '🇧🇷 pt'}}</ion-button>
+    </div>
     <div [class]="screen > 800 ? 'content-padrao' : 'content-padrao-mobile'">
-      <header></header>
-      <about></about>
-      <skills></skills>
-      <experience></experience>
-      <interests></interests>
-      <education></education>
-      <!-- <portfolio></portfolio> -->
+      <div #cvContent id="cv-content">
+        <header></header>
+        <br>
+        <about></about>
+        <br>
+        <skills></skills>
+        <br>
+        <interests></interests>
+        <br>
+        <experience></experience>
+        <!-- <education></education> -->
+        <!-- <portfolio></portfolio> -->
+      </div>
     </div>
     <br>
     <ion-text color="dark" class="copyright">

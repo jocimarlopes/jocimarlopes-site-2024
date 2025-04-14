@@ -26,7 +26,8 @@ export class HeaderComponent implements OnInit {
   }
 
   initAnimations() {
-    this.animateImage(true)
+    this.initialAnimateImage()
+    // this.animateImage(true)
     this.animateName()
     this.animateSubtitle()
     this.animateHeaderButtons()
@@ -72,6 +73,19 @@ export class HeaderComponent implements OnInit {
     anchor.href = url;
     anchor.target = "_blank";
     anchor.click();
+  }
+
+  initialAnimateImage() {
+    setTimeout(() => {
+      gsap.fromTo("#image",
+        { duration: 1, width: '6%', height: '3%', x: '100vw', repeat: 0 },
+        {
+          ease: 'power4.inOut', repeat: 0, x: 0, opacity: 1, onComplete: () => {
+            gsap.to('#image', { marginTop: '21px', width: '150px', height: '150px', repeat: 0, ease: 'power4.inOut' })
+          }
+        }
+      )
+    }, 300);
   }
 
   async animateImage(delay?: boolean) {
@@ -138,12 +152,11 @@ export class HeaderComponent implements OnInit {
     setTimeout(async () => {
       await gsap.from(this.q(".buttons"),
         {
-          delay: 1,
           y: '15vh',
           opacity: 0,
-          stagger: 0.2,
-          duration: 2,
-          ease: 'elastic.out',
+          stagger: 0.4,
+          duration: 0.8,
+          ease: 'bounce.out',
           repeat: 0
         }
       )

@@ -32,24 +32,20 @@ export class SkillsComponent  implements OnInit {
   }
 
   initAnimations() {
-    this.animateProgressBar()
+    // this.animateProgressBar()
   }
 
   addLanguages() {
     this.languages = [
-      {title: 'HTML', value: 0.98},
-      {title: 'CSS', value: 0.98},
       {title: 'JavaScript', value: 0.94},
       {title: 'TypeScript', value: 0.90},
       {title: 'Ionic Framework', value: 0.96},
       {title: 'Angular', value: 0.92},
-      {title: 'ReactJS', value: 0.85},
-      {title: 'React Native', value: 0.86},
-      {title: 'Cordova/Capacitor', value: 0.90},
-      {title: 'Python', value: 0.88},
+      {title: 'Cordova/Capacitor', value: 0.9},
+      {title: 'Python', value: 0.9},
       {title: 'Flask', value: 0.95},
-      {title: 'NodeJS', value: 0.85},
-      {title: 'SQL', value: 0.88},
+      {title: 'NodeJS', value: 0.8},
+      {title: 'SQL', value: 0.7},
 
     ]
   }
@@ -62,13 +58,11 @@ export class SkillsComponent  implements OnInit {
       {title: 'Xcode', value: 0.80},
       {title: 'GIT', value: 0.95},
       {title: 'CLI', value: 0.95},
-      {title: 'VS Code', value: 0.95},
-      {title: 'Amazon Web Services (AWS)', value: 0.95},
-      {title: 'Google Cloud', value: 0.95},
+      {title: 'Amazon Web Services (AWS)', value: 0.6},
+      {title: 'Google Cloud', value: 0.6},
       {title: 'Docker', value: 0.85},
-      {title: 'Heroku', value: 0.88},
-      {title: 'API Rest | GraphQL', value: 0.89},
-      {title: 'Jira', value: 0.80},
+      {title: 'API Rest | GraphQL', value: 0.95},
+      {title: 'RabbitMQ', value: 0.80},
     ]
   }
 

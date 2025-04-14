@@ -7,8 +7,14 @@ import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { InterestsComponent } from './interests/interests.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-
+// Função para carregar os arquivos JSON
+// export function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+// }
 
 @NgModule({
   declarations: [
@@ -22,6 +28,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
   ],
   imports: [
     CommonModule,
+    TranslateModule.forChild() // IMPORTANTE!
   ],
   exports: [
     HeaderComponent,
@@ -30,7 +37,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     EducationComponent,
     InterestsComponent,
     ExperienceComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    TranslateModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,

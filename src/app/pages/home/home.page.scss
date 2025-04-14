@@ -17,7 +17,7 @@
 }
 .content-padrao {
   margin: 0 auto;
-  width: 60%;
+  width: 80%;
 }
 .content-padrao-mobile {
   margin: 0 auto;
@@ -146,4 +146,9 @@
 .copyright {
   font-size: 16px;
   padding: 20px
+}
+.buttons-container {
+  position: fixed;
+  right: 5px;
+  top: 5px;
 }

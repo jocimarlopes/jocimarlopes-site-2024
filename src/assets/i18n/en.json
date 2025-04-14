@@ -1,0 +1,54 @@
+{
+  "HOME": {},
+  "HEADER": {
+    "TITLE_CARD": "HELLO WORLD",
+    "SUBTITLE": "Full-Stack Mobile Developer"
+  },
+  "ABOUT": {
+    "TITLE_CARD": "ABOUT",
+    "DESCRIPTION": "I’m a Full Stack Developer with experience in hybrid applications using Ionic, Angular, Python, and Node.js. I work on developing efficient, scalable solutions with a strong focus on user experience. I'm passionate about emerging technologies such as artificial intelligence and automation, applying innovation in a strategic way. I value clean coding practices, well-structured architecture, and high-impact deliveries. I'm constantly seeking to improve my skills and contribute to challenging and meaningful projects."
+  },
+  "SKILLS": {
+    "TITLE_CARD": "SKILLS",
+    "LANGUAGES": "Languages/Frameworks",
+    "SERVICES": "Software/Services"
+  },
+  "EXPERIENCE": {
+    "TITLE_CARD": "EXPERIENCE",
+    "EXPERIENCE_ONE": {
+      "OCCUPATION": "IT Intern",
+      "COMPANY": "Faculdade Cenecista de Osório",
+      "TIME": "APR/2011 - DEC/2012"
+    },
+    "EXPERIENCE_TWO": {
+      "OCCUPATION": "Software Developer",
+      "COMPANY": "Home Company - Custom Systems Development",
+      "TIME": "OCT/2018 - APR/2022"
+    },
+    "EXPERIENCE_THREE": {
+      "OCCUPATION": "Mobile Developer",
+      "COMPANY": "MJV Technology & Innovation",
+      "TIME": "FEB/2022 - JUN/2022"
+    },
+    "EXPERIENCE_FOUR": {
+      "OCCUPATION": "Systems Analyst Developer",
+      "COMPANY": "Stefanini Brasil (Bradesco Seguros client)",
+      "TIME": "NOV/2022 - FEB/2024"
+    },
+    "EXPERIENCE_FIVE": {
+      "OCCUPATION": "Mobile Developer II",
+      "COMPANY": "GFT Technologies (Bradesco Seguros client)",
+      "TIME": "OCT/2024 - APR/2025"
+    }
+  },
+  "INTERESTS": {
+    "TITLE_CARD": "INTERESTS",
+    "DESCRIPTION": "I start my day with a strong coffee — essential to stay focused and energized. Developing systems while listening to music has become more than a habit — it’s a passion. I truly value those moments of silence and immersion in the code, where I feel completely at home. Outside of work, I enjoy playing video games with my son and spending quality time with my family."
+  },
+  "EDUCATION": {
+    "TITLE_CARD": "EDUCATION"
+  },
+  "PROJECTS": {
+    "TITLE_CARD": "PROJECTS"
+  }
+}

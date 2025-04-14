@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import gsap, { Quad } from "gsap";
-import TextPlugin from 'gsap/TextPlugin';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import gsap from "gsap";
+import { LanguageService } from '../../services/language.service';
+import { AnimationsService } from 'src/app/services/animations.service';
+import html2canvas from 'html2canvas';
+import {jsPDF} from 'jspdf';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +12,10 @@ import TextPlugin from 'gsap/TextPlugin';
 })
 export class HomePage implements OnInit {
 
+  @ViewChild('cvContent', { static: false }) cvContent!: ElementRef;
+
+  selectedLang = 'en';
+
   isDark: boolean = false
   screen: any = window.innerWidth
   ano: string = '2024'
@@ -16,13 +23,17 @@ export class HomePage implements OnInit {
   svgParamsDesktop: string = '100 100 1400.9 643.4'
   svgParamsMobile: string = '0 0 100vw 100vh'
 
-  constructor() { }
+  constructor(
+    private languageService: LanguageService,
+    private animations: AnimationsService
+  ) {
+    this.selectedLang = this.languageService.getCurrentLanguage();
+  }
 
   ngOnInit() {
     this.addAnoCopyright()
     this.changeScreen()
     this.addBackground()
-    this.initialAnimationTextButtonDarkMode()
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     this.isDark = prefersDark.matches
     this.initializeDarkTheme(prefersDark.matches);
@@ -47,6 +58,66 @@ export class HomePage implements OnInit {
     this.isDark = darkMode ? darkMode : !this.isDark
     document.body.classList.toggle('dark', this.isDark);
   }
+
+  changeLanguage(lang: string) {
+    this.languageService.setLanguage(lang);
+    this.selectedLang = lang;
+  }
+
+  changeLanguageAnimations() {
+    this.animations.animateChangeTextLanguage(
+      this.selectedLang === 'pt' ? 'en' : 'pt', 
+      this.changeLanguage.bind(this)
+    )
+    // this.changeLanguage(this.selectedLang === 'pt' ? 'en' : 'pt')
+  }
+
+  downloadCV() {
+  const div = this.cvContent.nativeElement;
+  div.classList.add('pdf-content');
+  div.classList.add('force-desktop');
+  html2canvas(div).then((canvas: HTMLCanvasElement) => {
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+
+    const imgWidth = pageWidth - 20;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+    const canvasDataURL = canvas.toDataURL('image/jpeg', 0.95);
+
+    const pageHeightPx = (canvas.width / imgWidth) * pageHeight;
+    let pageCount = Math.ceil(canvas.height / pageHeightPx);
+
+    for (let i = 0; i < pageCount; i++) {
+      // cria um novo canvas temporário com a fatia da página atual
+      const pageCanvas = document.createElement("canvas");
+      pageCanvas.width = canvas.width;
+      pageCanvas.height = pageHeightPx;
+
+      const ctx = pageCanvas.getContext("2d");
+      if (ctx) {
+        ctx.fillStyle = "#fff";
+        ctx.fillRect(0, 0, pageCanvas.width, pageCanvas.height);
+        ctx.drawImage(
+          canvas,
+          0, i * pageHeightPx,
+          canvas.width, pageHeightPx,
+          0, 0,
+          canvas.width, pageHeightPx
+        );
+
+        const pageDataURL = pageCanvas.toDataURL("image/jpeg", 0.95);
+        if (i > 0) pdf.addPage();
+        pdf.addImage(pageDataURL, 'JPEG', 10, 10, imgWidth, pageHeight - 20);
+      }
+    }
+
+    pdf.save('example.pdf');
+    div.classList.remove('pdf-content');
+    div.classList.remove('force-desktop');
+  });
+}
 
   addBackground() {
     gsap.defaults({
@@ -110,68 +181,7 @@ export class HomePage implements OnInit {
 
   }
 
-  async initialAnimationTextButtonDarkMode() {
-    gsap.registerPlugin(TextPlugin)
-    await gsap.from('.dark-mode-text', {
-      duration: 2,
-      repeat: 0,
-      x: 200,
-      ease: 'elastic.out',
-    })
-
-  }
-
-  async animateTextButtonDarkMode() {
-    this.showTextDarkMode = true
-    gsap.registerPlugin(TextPlugin)
-    await gsap.to('.dark-mode-text', {
-      duration: 1,
-      repeat: 0,
-      y: '-10vh',
-      ease: 'elastic.in',
-    })
-  }
-
   async animateDarkModeButton() {
-    if (!this.showTextDarkMode) await this.animateTextButtonDarkMode()
-    gsap.to('.button-dark-mode', {
-      rotateX: '360deg',
-      rotateY: '360deg',
-      ease: Quad.easeOut,
-      repeat: 0
-    })
-    gsap.to('.button-dark-mode', {
-      duration: 0.4,
-      repeat: 0,
-      zIndex: 999,
-      marginRight: '50vw',
-      marginTop: '0vh',
-      ease: 'expo.in',
-      onComplete: () => {
-        gsap.to('.button-dark-mode', {
-          duration: 0.4,
-          position: 'absolute',
-          width: '300vw',
-          height: '300vw',
-          marginTop: '-50vh',
-          marginRight: '-100vw',
-          repeat: 0,
-          onComplete: () => {
-            gsap.to('.button-dark-mode', {
-              duration: 0.4,
-              width: '56px',
-              height: '56px',
-              repeat: 0,
-              marginTop: '-3px',
-              marginRight: '-3px',
-              clearProps: "all",
-              ease: 'expo.in'
-            })
-            this.toggleDarkTheme()
-          }
-        })
-      }
-    })
-
+    this.toggleDarkTheme()
   }
 }

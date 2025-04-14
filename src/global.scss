@@ -36,8 +36,8 @@
 
 .button-dark-mode {
   position: fixed;
-  right: -9px;
-  top: -9px;
+  right: 5px;
+  top: 5px;
 }
 
 .glass {
@@ -56,7 +56,7 @@
   position: absolute;
   left: 21px;
   font-weight: bold;
-  opacity: .05;
+  opacity: .3;
   p {
     font-size: 21px;
   }
@@ -93,4 +93,61 @@
   border: solid 1px var(--ion-color-dark);
   border-radius: 12px;
   padding: 5px;
+}
+
+.pdf-content {
+  padding: 20px;
+  background: white;
+  margin: 0 auto;
+  width: 90%;
+  height: 100%;
+  color: black !important;
+  img {
+    border-color: black !important;
+  }
+  ion-icon {
+    color: black !important;
+  }
+  .title-card{
+    color: grey !important;
+  }
+  .text-animated {
+    font-size: 16px;
+  }
+  * {
+    color: black !important;
+  }
+  .line {
+    background-color: black !important;
+    opacity: 1 !important;
+  }
+  .line-end {
+    background-color: black !important;
+    opacity: 1 !important;
+  }
+  .ball {
+    background-color: black !important;
+    opacity: 1 !important;
+  }
+  .progress-bar-color::part(progress) {
+    background-color: grey !important;
+  }
+  .progress-bar-color::part(track) {
+    background-color: var(--ion-color-dark) !important;
+  }
+  .item-education {
+    margin-top: 30px;
+    border: solid 1px black !important;
+    border-radius: 12px;
+    padding: 5px;
+  }
+  .interests-icons {
+    color: black !important;
+  }
+}
+.force-desktop {
+  width: 1200px; /* ou o valor de seu layout desktop */
+  max-width: none !important;
+  min-width: 1000px;
+  transform: scale(1);
 }

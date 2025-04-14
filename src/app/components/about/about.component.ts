@@ -42,7 +42,6 @@ export class AboutComponent  implements OnInit {
     setTimeout(async () => {
       await gsap.from(this.q(".buttons"),
         {
-          delay: 2,
           y: '-18vh',
           opacity: 0,
           stagger: 0.4,
