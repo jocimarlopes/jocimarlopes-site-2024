@@ -2,11 +2,13 @@
   "HOME": {},
   "HEADER": {
     "TITLE_CARD": "HELLO WORLD",
-    "SUBTITLE": "Full-Stack Mobile Developer"
+    "SUBTITLE": "Full-Stack Mobile Developer",
+    "EMAIL": "Email",
+    "PHONE": "Phone"
   },
   "ABOUT": {
     "TITLE_CARD": "ABOUT",
-    "DESCRIPTION": "I’m a Full Stack Developer with experience in hybrid applications using Ionic, Angular, Python, and Node.js. I work on developing efficient, scalable solutions with a strong focus on user experience. I'm passionate about emerging technologies such as artificial intelligence and automation, applying innovation in a strategic way. I value clean coding practices, well-structured architecture, and high-impact deliveries. I'm constantly seeking to improve my skills and contribute to challenging and meaningful projects."
+    "DESCRIPTION": "I am a Full Stack Developer with experience in hybrid applications using Ionic, Angular, Python, and Node.js. I work on developing efficient and scalable solutions focused on user experience. I'm interested in emerging technologies such as artificial intelligence and automation, applying innovation strategically. I value clean code practices, solid architecture, and high-value deliveries. I'm constantly improving my skills and contributing to challenging and impactful projects."
   },
   "SKILLS": {
     "TITLE_CARD": "SKILLS",
@@ -21,9 +23,9 @@
       "TIME": "APR/2011 - DEC/2012"
     },
     "EXPERIENCE_TWO": {
-      "OCCUPATION": "Software Developer",
-      "COMPANY": "Home Company - Custom Systems Development",
-      "TIME": "OCT/2018 - APR/2022"
+      "OCCUPATION": "CEO & Software Developer",
+      "COMPANY": "Jolo Systems (Startup)",
+      "TIME": "OCT/2018 - Present"
     },
     "EXPERIENCE_THREE": {
       "OCCUPATION": "Mobile Developer",
@@ -43,10 +45,20 @@
   },
   "INTERESTS": {
     "TITLE_CARD": "INTERESTS",
-    "DESCRIPTION": "I start my day with a strong coffee — essential to stay focused and energized. Developing systems while listening to music has become more than a habit — it’s a passion. I truly value those moments of silence and immersion in the code, where I feel completely at home. Outside of work, I enjoy playing video games with my son and spending quality time with my family."
+    "DESCRIPTION": "I start the day with a strong coffee — essential to maintain focus and energy. Developing systems while listening to music has become more than a habit — it’s a passion. I value those moments of silence and deep focus in the code, where I truly feel at home. Outside of work, I enjoy playing video games with my son and spending quality time with my family."
   },
   "EDUCATION": {
-    "TITLE_CARD": "EDUCATION"
+    "TITLE_CARD": "EDUCATION",
+    "EDUCATION_ONE": {
+      "COURSE": "High School",
+      "TIME": "2010 / 2014",
+      "INSTITUTION": "E. E. E. B. Prudente de Morais"
+    },
+    "EDUCATION_TWO": {
+      "COURSE": "Systems Analysis and Development",
+      "TIME": "2024 / Present",
+      "INSTITUTION": "IFRS - Federal Institute of Rio Grande do Sul"
+    }
   },
   "PROJECTS": {
     "TITLE_CARD": "PROJECTS"

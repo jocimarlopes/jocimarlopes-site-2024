@@ -102,11 +102,17 @@
   width: 90%;
   height: 100%;
   color: black !important;
+  .hide-buttons {
+    display: none !important;
+  }
   img {
     border-color: black !important;
   }
   ion-icon {
     color: black !important;
+  }
+  .show-texts {
+    display: block !important;
   }
   .title-card{
     color: grey !important;
@@ -118,15 +124,15 @@
     color: black !important;
   }
   .line {
-    background-color: black !important;
+    background-color: grey !important;
     opacity: 1 !important;
   }
   .line-end {
-    background-color: black !important;
+    background-color: grey !important;
     opacity: 1 !important;
   }
   .ball {
-    background-color: black !important;
+    background-color: grey !important;
     opacity: 1 !important;
   }
   .progress-bar-color::part(progress) {

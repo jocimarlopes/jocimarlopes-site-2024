@@ -2,7 +2,9 @@
     "HOME": {},
     "HEADER": {
         "TITLE_CARD": "OLÁ MUNDO",
-        "SUBTITLE": "Desenvolvedor Mobile Full-Stack"
+        "SUBTITLE": "Desenvolvedor Mobile Full-Stack",
+        "EMAIL": "E-mail",
+        "PHONE": "Telefone"
     },
     "ABOUT": {
         "TITLE_CARD": "SOBRE",
@@ -21,9 +23,9 @@
           "TIME": "ABR/2011 - DEZ/2012"
         },
         "EXPERIENCE_TWO": {
-          "OCCUPATION": "Desenvolvedor de Software",
-          "COMPANY": "Home Company - Desenvolvimento de Sistemas Personalizados",
-          "TIME": "OUT/2018 - ABR/22"
+          "OCCUPATION": "CEO & Desenvolvedor de Software",
+          "COMPANY": "Jolo Systems (Startup)",
+          "TIME": "OUT/2018 - Atualmente"
         },
         "EXPERIENCE_THREE": {
           "OCCUPATION": "Desenvolvedor Mobile",
@@ -46,7 +48,17 @@
         "DESCRIPTION": "Começo o dia com um bom café forte, essencial para manter o foco e a energia. Desenvolver sistemas ao som de música se tornou mais do que um hábito — é uma paixão. Valorizo esses momentos de silêncio e imersão no código, onde me sinto verdadeiramente em casa. Fora do trabalho, gosto de jogar videogame com meu filho e aproveitar momentos de qualidade com minha família."
     },
     "EDUCATION": {
-        "TITLE_CARD": "EDUCAÇÃO"
+      "TITLE_CARD": "EDUCAÇÃO",
+      "EDUCATION_ONE": {
+        "COURSE": "Ensino Médio",
+        "TIME": "2010 / 2014",
+        "INSTITUTION": "E. E. E. B. Prudente de Morais"
+      },
+      "EDUCATION_TWO": {
+        "COURSE": "Análise e Desenvolvimento de Sistemas",
+        "TIME": "2024 / Atualmente",
+        "INSTITUTION": "IFRS - Instituto Federal do Rio Grande do Sul"
+      }
     },
     "PROJECTS": {
         "TITLE_CARD": "PROJETOS"

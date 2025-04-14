@@ -15,7 +15,12 @@
       </ion-text>
       <br>
       
-      <div class="content-buttons" size="2">
+      <ion-text class="show-texts" color="dark">
+        <p class="subtitle">+5551996919023</p>
+        <p class="subtitle text-animated">lopes.jocimar&#64;gmail.com</p>
+      </ion-text>
+
+      <div class="content-buttons hide-buttons" size="2">
         <ion-fab-button class="buttons" *ngFor="let botao of botoes" (click)="goToPage(botao.link)" size="small" color="dark">
           <ion-icon color="light" name="{{botao.icon}}"></ion-icon>
         </ion-fab-button>
