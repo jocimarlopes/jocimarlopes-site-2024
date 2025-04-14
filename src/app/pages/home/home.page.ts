@@ -113,7 +113,7 @@ export class HomePage implements OnInit {
       }
     }
 
-    pdf.save('Jocimar Lopes - Full Stack Developer.pdf');
+    pdf.save(`Jocimar Lopes - Full Stack Developer (${this.selectedLang}).pdf`);
     div.classList.remove('pdf-content');
     div.classList.remove('force-desktop');
   });
